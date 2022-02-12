@@ -13,8 +13,8 @@ const App = () => {
     const { city, country } = search;
 
     const getWeather = async () => {
-        const API_KEY = "2336fa17727ec5721289f24e60a156b0";
-        const api = `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&appid=${API_KEY}`;
+        const { VITE_API_KEY } = import.meta.env;
+        const api = `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&appid=${VITE_API_KEY}`;
         console.log(api);
         const resp = await fetch(api);
         const data = await resp.json();
@@ -37,8 +37,6 @@ const App = () => {
             country: "",
         });
     };
-
-    console.log(weatherResp);
 
     return (
         <>
