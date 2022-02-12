@@ -14,7 +14,7 @@ const App = () => {
 
     const getWeather = async () => {
         const { VITE_API_KEY } = import.meta.env;
-        const api = `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&appid=${VITE_API_KEY}`;
+        const api = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&appid=${VITE_API_KEY}`;
         console.log(api);
         const resp = await fetch(api);
         const data = await resp.json();
